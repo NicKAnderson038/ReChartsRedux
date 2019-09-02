@@ -24,17 +24,38 @@ const data2 = [
   { quarter: 5, earnings: 11500 }
 ]
 
+const data3 = hData.hManagerData.StudyListResult
+
+const data4 = [
+  {
+    "TxDistance": 50,
+    "LandCoverCategory": "ocean",
+  },
+  {
+    "TxDistance": 250,
+    "LandCoverCategory": "jungle",
+  },
+  {
+    "TxDistance": 70,
+    "LandCoverCategory": "ocean",
+  },
+  {
+    "TxDistance": 140,
+    "LandCoverCategory": "ocean",
+  }
+]
+
 function index() {
   const [flag, setFlag] = useState(true)
-  const [data, setData] = useState(data1)
-  logColor(hData)
+  const [data, setData] = useState(data3)
+  logColor(hData.hManagerData.StudyListResult)
   logColor(data)
   const dataChangeHandler = () => {
     if (flag) {
-      setData(data2)
+      setData(data4)
       setFlag(false)
     } else {
-      setData(data1)
+      setData(data3)
       setFlag(true)
     }
   }
@@ -47,9 +68,9 @@ function index() {
         height={300}
       >
       <BarChart data={data}>
-        <XAxis dataKey="quarter" />
-        <YAxis dataKey="earnings" />
-        <Bar dataKey="earnings" />
+        <XAxis dataKey="LandCoverCategory" />
+        <YAxis dataKey="TxDistance" />
+        <Bar dataKey="TxDistance" />
       </BarChart>
       </ResponsiveContainer>
       <br />
