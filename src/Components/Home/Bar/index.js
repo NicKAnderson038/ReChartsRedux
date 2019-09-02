@@ -9,24 +9,9 @@ const styles = {
   textAlign: "center"
 }
 
-const data1 = [
-  { quarter: 1, earnings: 13000 },
-  { quarter: 2, earnings: 16500 },
-  { quarter: 3, earnings: 14250 },
-  { quarter: 4, earnings: 19000 }
-]
+const data1 = hData.hManagerData.StudyListResult
 
 const data2 = [
-  { quarter: 1, earnings: 10000 },
-  { quarter: 2, earnings: 16000 },
-  { quarter: 3, earnings: 33050 },
-  { quarter: 4, earnings: 11500 },
-  { quarter: 5, earnings: 11500 }
-]
-
-const data3 = hData.hManagerData.StudyListResult
-
-const data4 = [
   {
     "TxDistance": 50,
     "LandCoverCategory": "ocean",
@@ -47,15 +32,14 @@ const data4 = [
 
 function index() {
   const [flag, setFlag] = useState(true)
-  const [data, setData] = useState(data3)
-  logColor(hData.hManagerData.StudyListResult)
+  const [data, setData] = useState(data1)
   logColor(data)
   const dataChangeHandler = () => {
     if (flag) {
-      setData(data4)
+      setData(data2)
       setFlag(false)
     } else {
-      setData(data3)
+      setData(data1)
       setFlag(true)
     }
   }

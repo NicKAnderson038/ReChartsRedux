@@ -7,10 +7,11 @@ import {
 } from 'react-router-dom'
 
 import Nav from './Components/UI/Nav'
-// import ReChartsLineGraph from './Components/Recharts/LineGraph/Index'
+import BarChart from './Components/Home/Bar'
+import ReChartsLineGraph from './Components/Recharts/LineGraph/Index'
 // const Nav = lazy(() => import('./Components/UI/Nav'))
-const ReChartsLineGraph = lazy(() => import('./Components/Recharts/LineGraph/Index'))
-const BarChart = lazy(() => import('./Components/Home/Bar'))
+// const ReChartsLineGraph = lazy(() => import('./Components/Recharts/LineGraph/Index'))
+// const BarChart = lazy(() => import('./Components/Home/Bar'))
 
 
 const Loading = () => <div>Loading...</div>
