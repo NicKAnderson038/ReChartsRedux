@@ -3,13 +3,15 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  withRouter
+  // withRouter
 } from 'react-router-dom'
 
-import ReChartsLineGraph from './Components/Recharts/LineGraph'
+import Nav from './Components/UI/Nav'
+// import ReChartsLineGraph from './Components/Recharts/LineGraph/Index'
+// const Nav = lazy(() => import('./Components/UI/Nav'))
+const ReChartsLineGraph = lazy(() => import('./Components/Recharts/LineGraph/Index'))
+const BarChart = lazy(() => import('./Components/Home/Bar'))
 
-const Nav = lazy(() => import('./Components/UI/Nav'))
-// const OrginialD3 = lazy(() => import('./Components/OrginalD3'))
 
 const Loading = () => <div>Loading...</div>
 
@@ -23,18 +25,17 @@ const mainRouter = () => {
             exact
             path="/"
             render={props => (
-              // <OrginialD3
-              //   header={'Original D3 example integrated into React'}
-              //   userSelect={{ userSelect: 'none' }}
-              //   width={960}
-              //   height={600}
-              //   {...props}
-              // />
-              <h1>Home Page</h1>
+              <BarChart
+                header={'Bar Chart, Pie & Controls'}
+                userSelect={{ userSelect: 'none' }}
+                width={960}
+                height={600}
+                {...props}
+              />
             )}
           />
           <Route
-            path="/recharts-line-graph"
+            path="/line-graph"
             render={props => (
               <ReChartsLineGraph
                 header={'reCharts line Graph'}

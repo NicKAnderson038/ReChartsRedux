@@ -264,7 +264,7 @@ class Index extends React.Component {
       top: 'dataMax+1',
       bottom: 'dataMin',
       top2: 'dataMax+50',
-      bottom: 'dataMin+50'
+      bottom2: 'dataMin+50'
     }))
   }
 
