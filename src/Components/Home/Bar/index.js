@@ -1,8 +1,10 @@
 import React, { useState } from "react"
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from "recharts"
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts"
 
 import * as hData from '../../../Data/hData'
 import { logColor } from "../../../Helpers/consoleLogStyle";
+
+import PieExample from '../Pie'
 
 const styles = {
   fontFamily: "sans-serif",
@@ -33,7 +35,7 @@ const data2 = [
 function index() {
   const [flag, setFlag] = useState(true)
   const [data, setData] = useState(data1)
-  logColor(data)
+  
   const dataChangeHandler = () => {
     if (flag) {
       setData(data2)
@@ -54,11 +56,17 @@ function index() {
       <BarChart data={data}>
         <XAxis dataKey="LandCoverCategory" />
         <YAxis dataKey="TxDistance" />
+        <Tooltip/>
         <Bar dataKey="TxDistance" />
       </BarChart>
       </ResponsiveContainer>
       <br />
       <button onClick={() => dataChangeHandler()}>Transform</button>
+      <br/>
+      <br/>
+      <PieExample
+        data={data}
+      />
     </div>
   )
 }
