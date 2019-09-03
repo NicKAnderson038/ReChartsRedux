@@ -50,7 +50,52 @@ const mainRouter = () => {
         </Switch>
       </Suspense>
     </Router>
+    // <div className="App">
+    //     <header className="App-header">
+    //       <Nav/>
+    //     </header>
+    //     <main>
+    //       <Route exact path="/" component={BarChart} />
+    //       <Route exact path="/line-graph" component={ReChartsLineGraph} />
+    //     </main>
+    //   </div>
   )
 }
 
 export default mainRouter
+
+
+/*
+ <Router>
+      <Suspense fallback={Loading}>
+        <Nav />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <BarChart
+                header={'Bar Chart, Pie & Controls'}
+                userSelect={{ userSelect: 'none' }}
+                width={960}
+                height={600}
+                {...props}
+              />
+            )}
+          />
+          <Route
+            path="/line-graph"
+            render={props => (
+              <ReChartsLineGraph
+                header={'reCharts line Graph'}
+                userSelect={{ userSelect: 'none' }}
+                width={960}
+                height={500}
+                {...props}
+              />
+            )}
+          />
+        </Switch>
+      </Suspense>
+    </Router>
+*/
