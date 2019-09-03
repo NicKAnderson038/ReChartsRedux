@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 import Nav from './Components/UI/Nav'
-import BarChart from './Components/Home/Bar'
+import Controller from './Components/Home/Controls'
 import ReChartsLineGraph from './Components/Recharts/LineGraph/Index'
 // const Nav = lazy(() => import('./Components/UI/Nav'))
 // const ReChartsLineGraph = lazy(() => import('./Components/Recharts/LineGraph/Index'))
@@ -26,8 +26,8 @@ const mainRouter = () => {
             exact
             path="/"
             render={props => (
-              <BarChart
-                header={'Bar Chart, Pie & Controls'}
+              <Controller
+                header={'Updates Bar & Pie Graphs'}
                 userSelect={{ userSelect: 'none' }}
                 width={960}
                 height={600}

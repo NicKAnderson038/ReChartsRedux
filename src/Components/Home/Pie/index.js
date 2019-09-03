@@ -32,7 +32,7 @@ function index(props) {
   const { data } = props
   logColor(data)
 return (
-<PieChart width={730} height={250}>
+<PieChart width={350} height={250}>
   <Tooltip/>
   <Pie data={data} dataKey="TxDistance" nameKey="LandCoverCategory" cx="50%" cy="50%" innerRadius={0} outerRadius={80} fill="#82ca9d" label />
 </PieChart>
